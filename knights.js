@@ -15,7 +15,7 @@ function generateKnightMoves(column, row) {
         let newColumn = column + deltaColumn;
         if (isInsideBoard(newColumn, newRow)) {
             newColumn = String.fromCharCode(97 + newColumn)
-            moves.push([newColumn, newRow + 1]);
+            moves.push(`${newColumn}`+ `${newRow + 1}`);
         }
     }
     return moves;
@@ -46,11 +46,11 @@ function findShortestPath(chessboardGraph, source, destination) {
         }
 
         for (const neighbor of chessboardGraph[currentSquare]) {
-            const move = neighbor[0]+neighbor[1];
-            if (!visited.has(move)) {
-                visited.add(move);
-                parent[move] = currentSquare;
-                queue.push(move);
+
+            if (!visited.has(neighbor)) {
+                visited.add(neighbor);
+                parent[neighbor] = currentSquare;
+                queue.push(neighbor);
             }
         }
     }
@@ -75,13 +75,3 @@ const destinationSquare = 'h8'; // Destination square
 const shortestPath = findShortestPath(chessboardGraph, sourceSquare, destinationSquare);
 
 console.log(shortestPath);
-
-/*
-function breadthFirstSearch(origin, destination){
-    const queue = [origin];
-    const visited = {};
-
-    while(queue.length){
-        const currentSquare = queue.shift();
-    }
-}*/
