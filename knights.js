@@ -32,7 +32,56 @@ for (let row = 0; row < MAX_ROWS; row++) {
     }
 }
 
-for (const vertex in chessboardGraph) {
-    console.log(`${vertex}: ${chessboardGraph[vertex]}`);
+function findShortestPath(chessboardGraph, source, destination) {
+    const queue = [source];
+    const visited = new Set([source]);
+    const parent = {};
+
+    while (queue.length > 0) {
+        const currentSquare = queue.shift();
+
+        if (currentSquare === destination) {
+            // Reconstruct and return the shortest path
+            return reconstructPath(parent, source, destination);
+        }
+
+        for (const neighbor of chessboardGraph[currentSquare]) {
+            const move = neighbor[0]+neighbor[1];
+            if (!visited.has(move)) {
+                visited.add(move);
+                parent[move] = currentSquare;
+                queue.push(move);
+            }
+        }
+    }
 }
 
+function reconstructPath(parent, source, destination) {
+    const shortestPath = [];
+    let currentSquare = destination;
+
+    while (currentSquare !== source) {
+        shortestPath.unshift(currentSquare);
+        currentSquare = parent[currentSquare];
+    }
+
+    shortestPath.unshift(source);
+    return shortestPath;
+}
+
+const sourceSquare = 'a1'; // Starting square
+const destinationSquare = 'h8'; // Destination square
+
+const shortestPath = findShortestPath(chessboardGraph, sourceSquare, destinationSquare);
+
+console.log(shortestPath);
+
+/*
+function breadthFirstSearch(origin, destination){
+    const queue = [origin];
+    const visited = {};
+
+    while(queue.length){
+        const currentSquare = queue.shift();
+    }
+}*/
