@@ -70,7 +70,7 @@ function reconstructPath(parent, source, destination) {
 }
 
 const sourceSquare = 'a1'; // Starting square
-const destinationSquare = 'h8'; // Destination square
+const destinationSquare = 'g6'; // Destination square
 
 const shortestPath = findShortestPath(chessboardGraph, sourceSquare, destinationSquare);
 

@@ -1,0 +1,37 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    flex-direction: column;
+}
+
+main{
+    display:flex;
+    align-items: center;
+}
+
+.buttons{
+    margin-right: 1.5em;
+}
+
+button{
+    margin:1em;
+}
+
+.board{
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: repeat(8,1fr);
+    gap:0px;
+}
+
+
+
+.square{
+    border: 1px solid;
+}
+
+.square:hover{
+    border:  1px solid red;
+    scale: 1.05;
+}
