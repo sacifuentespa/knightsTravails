@@ -1,14 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+
 body{
     display: flex;
     align-items: center;
-    justify-self: center;
     flex-direction: column;
 }
 
 main{
     display:flex;
     align-items: center;
+    margin: 1rem;
 }
+
 
 .buttons{
     margin-right: 1.5em;
@@ -29,9 +34,30 @@ button{
 
 .square{
     border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.square:hover{
+.selectable:hover{
     border:  1px solid red;
     scale: 1.05;
+}
+
+footer{
+    display:flex;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    width: 100%;
+}
+
+a{
+    color: white;
+    text-decoration: none; 
+}
+
+a:visited {
+    color: white;
+    text-decoration: none;
 }

@@ -16,6 +16,9 @@ function drawBoard() {
             const square = document.createElement('div');
             square.classList.add('square');
 
+            const squareText = document.createElement('p');
+            square.appendChild(squareText);
+
             square.style.width = `${squareSize}px`;
             square.style.height = `${squareSize}px`;
 
@@ -34,6 +37,5 @@ function calculateSquareSize() {
     const squareSize = Math.min(screenWidth, screenHeight);
     return squareSize
 }
-
 
 drawBoard();
