@@ -69,9 +69,4 @@ function reconstructPath(parent, source, destination) {
     return shortestPath;
 }
 
-const sourceSquare = 'a1'; // Starting square
-const destinationSquare = 'g6'; // Destination square
-
-const shortestPath = findShortestPath(chessboardGraph, sourceSquare, destinationSquare);
-
-console.log(shortestPath);
+export {findShortestPath, chessboardGraph};

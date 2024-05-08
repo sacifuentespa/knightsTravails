@@ -39,6 +39,10 @@ button{
     justify-content: center;
 }
 
+.square p{
+    font-size: xx-large;
+}
+
 .selectable:hover{
     border:  1px solid red;
     scale: 1.05;

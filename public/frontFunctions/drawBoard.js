@@ -34,8 +34,9 @@ function drawBoard() {
 function calculateSquareSize() {
     const screenWidth = window.innerWidth / 8;
     const screenHeight = window.innerHeight / 8;
-    const squareSize = Math.min(screenWidth, screenHeight);
+    const squareSize = Math.min(screenWidth, screenHeight)*0.85;
     return squareSize
 }
 
-drawBoard();
+
+export default drawBoard; 
