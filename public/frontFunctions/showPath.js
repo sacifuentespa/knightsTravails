@@ -75,6 +75,8 @@ async function beginPath() {
 function resetBoard() {
     const boardDiv = document.querySelector(".board");
     boardDiv.innerHTML = '';
+    const instruction = document.querySelector('.instruction');
+    instruction.textContent = "";
     drawBoard();
 }
 
